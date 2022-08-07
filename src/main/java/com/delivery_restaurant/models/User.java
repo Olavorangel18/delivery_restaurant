@@ -1,7 +1,6 @@
 package com.delivery_restaurant.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,7 +10,6 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class User {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     @Field
     private String firstName;
