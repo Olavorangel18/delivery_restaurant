@@ -2,7 +2,7 @@ package com.delivery_restaurant.delivery_restaurant.services;
 import java.util.List;
 
 
-public interface generalService<T> {
+public interface GeneralService<T> {
     public List<T> getAll();
     public T getById(String id);
     public T save(T t);

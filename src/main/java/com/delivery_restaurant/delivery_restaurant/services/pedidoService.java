@@ -4,11 +4,11 @@ import java.util.List;
 import com.delivery_restaurant.delivery_restaurant.models.Pedido;
 import com.delivery_restaurant.delivery_restaurant.repositories.PedidoRepository;
 
-public class pedidoService implements generalService<Pedido> {
+public class PedidoService implements GeneralService<Pedido> {
         
         private PedidoRepository pedidoRepository;
         
-        public pedidoService(PedidoRepository pedidoRepository) {
+        public PedidoService(PedidoRepository pedidoRepository) {
             this.pedidoRepository = pedidoRepository;
         }
         

@@ -6,7 +6,7 @@ import com.delivery_restaurant.delivery_restaurant.models.Entrega;
 import com.delivery_restaurant.delivery_restaurant.repositories.EntregaRepository;
 @Service
 
-public class entregaService implements generalService<Entrega> {
+public class EntregaService implements GeneralService<Entrega> {
         
         @Autowired
         private EntregaRepository entregaRepository;

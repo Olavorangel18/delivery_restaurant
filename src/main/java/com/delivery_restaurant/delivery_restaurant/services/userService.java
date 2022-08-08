@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.delivery_restaurant.delivery_restaurant.models.User;
 import com.delivery_restaurant.delivery_restaurant.repositories.UserRepository;
 @Service
-public class userService implements generalService<User> {
+public class UserService implements GeneralService<User> {
     
     @Autowired
     private UserRepository userRepository;
