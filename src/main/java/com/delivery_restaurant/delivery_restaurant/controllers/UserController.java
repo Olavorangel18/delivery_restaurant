@@ -1,6 +1,7 @@
 package com.delivery_restaurant.delivery_restaurant.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,9 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.delivery_restaurant.delivery_restaurant.models.User;
 import com.delivery_restaurant.delivery_restaurant.services.UserService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -34,20 +38,22 @@ public class UserController {
 
     @PostMapping(value="/save")
     public User saveUser(@RequestBody User user) {
+        UUID uuid = UUID.randomUUID();
+        user.setId(uuid.toString());
         return this.userService.save(user);
     }
 
-    @PostMapping(value="/delete")
+    @DeleteMapping(value="/delete")
     public void deleteUser(@RequestBody User user) {
         this.userService.delete(user);
     }
 
-    @PostMapping(value="/deleteById")
+    @DeleteMapping(value="/{id}")
     public void deleteUserById(@RequestParam(value="id") String id) {
         this.userService.deleteById(id);
     }
 
-    @PostMapping(value="/update")
+    @PutMapping(value="/update")
     public void updateUser(@RequestBody User user) {
         this.userService.update(user);
     }

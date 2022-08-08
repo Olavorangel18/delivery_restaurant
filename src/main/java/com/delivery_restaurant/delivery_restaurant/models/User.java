@@ -2,6 +2,8 @@ package com.delivery_restaurant.delivery_restaurant.models;
 
 
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -10,10 +12,12 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class User {
 
     @Id
-    private long id;
+    private String id;
     @Field
+    @NotNull(message = "First Name is compulsory")
     private String firstName;
     @Field
+    @NotNull(message = "Last Name is compulsory")
     private String lastName;
 
     public User(String firstName, String lastName){
@@ -21,11 +25,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

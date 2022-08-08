@@ -1,8 +1,13 @@
 package com.delivery_restaurant.delivery_restaurant.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,32 +22,34 @@ public class PedidoController {
     @Autowired
     private PedidoService pedidoService;
 
-    @RequestMapping("/getAll")
+    @GetMapping()
     public List<Pedido> getAllPedido() {
         return this.pedidoService.getAll();
     }
 
-    @RequestMapping("/getPedidosById")
+    @GetMapping("/{id}")
     public Pedido getPedidoById(@RequestParam(value="id") String id) {
         return this.pedidoService.getById(id);
     }
 
-    @RequestMapping("/save")
+    @PostMapping("/save")
     public Pedido savePedido(@RequestBody Pedido pedido) {
+        UUID uuid = UUID.randomUUID();
+        pedido.setId(uuid.toString());
         return this.pedidoService.save(pedido);
     }
 
-    @RequestMapping("/delete")
+    @DeleteMapping("/delete")
     public void deletePedido(@RequestBody Pedido pedido) {
         this.pedidoService.delete(pedido);
     }
 
-    @RequestMapping("/deleteById")
+    @DeleteMapping("/{id}")
     public void deletePedidoById(@RequestParam(value="id") String id) {
         this.pedidoService.deleteById(id);
     }
 
-    @RequestMapping("/update")
+    @PutMapping("/update")
     public void updatePedido(@RequestBody Pedido pedido) {
         this.pedidoService.update(pedido);
     }

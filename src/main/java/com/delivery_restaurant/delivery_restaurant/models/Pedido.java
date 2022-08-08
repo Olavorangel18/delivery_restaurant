@@ -1,5 +1,7 @@
 package com.delivery_restaurant.delivery_restaurant.models;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -8,14 +10,18 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Pedido {
     
     @Id
-    private long id;
+    private String id;
     @Field
+    @NotNull(message = "Codigo is compulsory")
     private String codigo;
     @Field
+    @NotNull(message = "cliente is compulsory")
     private Cliente cliente; // Precisa colocar flag para o MongoDB entender a cardinalidade
     @Field
+    @NotNull(message = "restaurante is compulsory")
     private String restaurante;
     @Field 
+    @NotNull(message = "Comida is compulsory")
     private String comida;
 
     
@@ -26,11 +32,11 @@ public class Pedido {
         this.comida = comida;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

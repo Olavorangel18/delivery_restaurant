@@ -1,7 +1,5 @@
 package com.delivery_restaurant.delivery_restaurant.models;
-
-
-
+import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -10,18 +8,24 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Entrega {
 
     @Id
-    private long id;
+    private String id;
     @Field
+    @NotNull(message = "Codigo is compulsory ")
     private String codigo;
     @Field
+    @NotNull(message = "Data is compulsory ")
     private String data;
     @Field
+    @NotNull(message = "Hora is compulsory ")
     private String hora;
     @Field
+    @NotNull(message = "Status is compulsory")
     private String status;
     @Field
+    @NotNull(message = "Restaurante is compulsory ")
     private String restaurante;
     @Field
+    @NotNull(message = "Entregador is compulsory")
     private String entregador;
 
     public Entrega(String codigo, String data, String hora, String status, String restaurante, String entregador) {
@@ -33,11 +37,11 @@ public class Entrega {
         this.entregador = entregador;
     }
     
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
