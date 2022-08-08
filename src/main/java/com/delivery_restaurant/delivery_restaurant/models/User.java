@@ -4,6 +4,7 @@ package com.delivery_restaurant.delivery_restaurant.models;
 
 import java.util.List;
 
+
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -23,8 +24,8 @@ public class User {
     @NotNull(message = "Last Name is compulsory")
     private String lastName;
     @Field
-    @NotNull(message = "Email is compulsory")
     @Indexed(unique=true)
+    @NotNull(message = "Email is compulsory")
     private String email;
     @Field
     private Endereco endereco;

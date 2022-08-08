@@ -39,7 +39,11 @@ public class UserService implements GeneralService<User> {
     public void update(User user) {
         this.userRepository.save(user);
     }
-    
+
+    public User findByEmail(String email) {
+        return this.userRepository.findByEmail(email);
+    }
+
 }
     
 

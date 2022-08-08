@@ -14,13 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.delivery_restaurant.delivery_restaurant.models.Pedido;
+import com.delivery_restaurant.delivery_restaurant.models.User;
 import com.delivery_restaurant.delivery_restaurant.services.PedidoService;
+import com.delivery_restaurant.delivery_restaurant.services.UserService;
 
 @RestController
 @RequestMapping("/pedido")
 public class PedidoController {
     @Autowired
     private PedidoService pedidoService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping()
     public List<Pedido> getAllPedido() {
@@ -36,6 +40,10 @@ public class PedidoController {
     public Pedido savePedido(@RequestBody Pedido pedido) {
         UUID uuid = UUID.randomUUID();
         pedido.setId(uuid.toString());
+        
+        User user = this.userService.findByEmail(pedido.getUser().getEmail());
+        pedido.setUser(user);
+        this.userService.update(user);
         return this.pedidoService.save(pedido);
     }
 

@@ -7,7 +7,4 @@ import com.delivery_restaurant.delivery_restaurant.models.User;
 
 @Repository
 public interface PedidoRepository  extends MongoRepository<Pedido,String> {
-
-    User findUserByUserEmail(String email);
-    
 }

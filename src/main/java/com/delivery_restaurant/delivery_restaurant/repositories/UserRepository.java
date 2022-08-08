@@ -6,5 +6,6 @@ import com.delivery_restaurant.delivery_restaurant.models.User;
 
 @Repository
 public interface UserRepository extends MongoRepository<User,String> {    
-        User findByEmail(String email);
+
+    public User findByEmail(String email);
 }
