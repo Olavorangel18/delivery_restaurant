@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.delivery_restaurant.delivery_restaurant.models.Pedido;
+import com.delivery_restaurant.delivery_restaurant.models.User;
 import com.delivery_restaurant.delivery_restaurant.repositories.PedidoRepository;
 
 @Service

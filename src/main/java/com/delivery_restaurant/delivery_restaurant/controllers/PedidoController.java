@@ -36,6 +36,7 @@ public class PedidoController {
     public Pedido savePedido(@RequestBody Pedido pedido) {
         UUID uuid = UUID.randomUUID();
         pedido.setId(uuid.toString());
+        pedido.getUser().setId(uuid.toString());
         return this.pedidoService.save(pedido);
     }
 

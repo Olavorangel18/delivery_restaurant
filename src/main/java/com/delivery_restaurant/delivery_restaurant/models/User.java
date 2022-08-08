@@ -19,10 +19,13 @@ public class User {
     @Field
     @NotNull(message = "Last Name is compulsory")
     private String lastName;
+    @Field
+    private Endereco endereco;
 
-    public User(String firstName, String lastName){
+    public User(String firstName, String lastName, Endereco endereco) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.endereco = endereco;
     }
 
     public String getId() {
@@ -48,5 +51,15 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    
     
 }

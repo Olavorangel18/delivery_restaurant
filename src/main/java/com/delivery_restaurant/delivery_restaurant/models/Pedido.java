@@ -15,8 +15,8 @@ public class Pedido {
     @NotNull(message = "Codigo is compulsory")
     private String codigo;
     @Field
-    @NotNull(message = "cliente is compulsory")
-    private Cliente cliente; // Precisa colocar flag para o MongoDB entender a cardinalidade
+    @NotNull(message = "User is compulsory")
+    private User user; // Precisa colocar flag para o MongoDB entender a cardinalidade
     @Field
     @NotNull(message = "restaurante is compulsory")
     private String restaurante;
@@ -25,9 +25,9 @@ public class Pedido {
     private String comida;
 
     
-    public Pedido(String codigo, Cliente cliente, String restaurante, String comida) {
+    public Pedido(String codigo, User user, String restaurante, String comida) {
         this.codigo = codigo;
-        this.cliente = cliente;
+        this.user = user;
         this.restaurante = restaurante;
         this.comida = comida;
     }
@@ -48,12 +48,12 @@ public class Pedido {
         this.codigo = codigo;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public User getUser() {
+        return user;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setUser(User User) {
+        this.user = User;
     }
 
     public String getRestaurante() {
