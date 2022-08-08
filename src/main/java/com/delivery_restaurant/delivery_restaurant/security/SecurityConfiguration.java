@@ -30,7 +30,7 @@ import com.delivery_restaurant.delivery_restaurant.security.util.JwtUtil;
 import java.lang.Exception;
 
 @RestController
-class HelloWorldController {
+class AuthenticationController {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
