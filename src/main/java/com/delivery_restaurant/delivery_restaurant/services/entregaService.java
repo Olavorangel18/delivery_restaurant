@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.delivery_restaurant.delivery_restaurant.models.Entrega;
 import com.delivery_restaurant.delivery_restaurant.repositories.EntregaRepository;
-@Service
 
+@Service
 public class EntregaService implements GeneralService<Entrega> {
         
         @Autowired
