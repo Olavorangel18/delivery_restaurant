@@ -1,5 +1,6 @@
 package com.delivery_restaurant.delivery_restaurant.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,9 +42,15 @@ public class PedidoController {
         UUID uuid = UUID.randomUUID();
         pedido.setId(uuid.toString());
         
-        User user = this.userService.findByEmail(pedido.getUser().getEmail());
-        pedido.setUser(user);
+        User user = this.userService.findByEmail(pedido.getEmail());
+        pedido.setEmail(user.getEmail());
         this.userService.update(user);
+        if(user.getPedidos() == null) {
+            user.setPedidos(new ArrayList<Pedido>());
+        }
+        user.getPedidos().add(pedido);
+        this.userService.update(user);
+
         return this.pedidoService.save(pedido);
     }
 

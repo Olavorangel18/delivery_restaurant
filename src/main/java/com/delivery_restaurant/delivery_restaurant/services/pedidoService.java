@@ -1,5 +1,6 @@
 package com.delivery_restaurant.delivery_restaurant.services;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -44,6 +45,10 @@ public class PedidoService implements GeneralService<Pedido> {
         @Override
         public void update(Pedido t) {
             pedidoRepository.save(t);
+        }
+
+        public Pedido findById(String id) {
+            return pedidoRepository.findById(id).orElse(null);
         }
 
 }

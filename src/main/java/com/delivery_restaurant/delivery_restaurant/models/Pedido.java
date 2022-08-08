@@ -3,7 +3,6 @@ package com.delivery_restaurant.delivery_restaurant.models;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -16,9 +15,8 @@ public class Pedido {
     @NotNull(message = "Codigo is compulsory")
     private String codigo;
     @Field
-    @DBRef
-    @NotNull(message = "User is compulsory")
-    private User user;
+    @NotNull(message = "email is compulsory")
+    private String email;
     @Field
     @NotNull(message = "restaurante is compulsory")
     private String restaurante;
@@ -27,9 +25,9 @@ public class Pedido {
     private String comida;
 
     
-    public Pedido(String codigo, User user, String restaurante, String comida) {
+    public Pedido(String codigo, String email, String restaurante, String comida) {
         this.codigo = codigo;
-        this.user = user;
+        this.email = email;
         this.restaurante = restaurante;
         this.comida = comida;
     }
@@ -50,12 +48,12 @@ public class Pedido {
         this.codigo = codigo;
     }
 
-    public User getUser() {
-        return user;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUser(User User) {
-        this.user = User;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getRestaurante() {

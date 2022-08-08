@@ -57,7 +57,5 @@ public class UserController {
     public void updateUser(@RequestBody User user) {
         this.userService.update(user);
     }
-    
-    
 
 }

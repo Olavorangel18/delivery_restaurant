@@ -1,6 +1,7 @@
 package com.delivery_restaurant.delivery_restaurant.models;
 import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -27,14 +28,19 @@ public class Entrega {
     @Field
     @NotNull(message = "Entregador is compulsory")
     private String entregador;
+    @Field
+    @DBRef
+    @NotNull(message = "Pedido is compulsory")
+    private Pedido pedido;
 
-    public Entrega(String codigo, String data, String hora, String status, String restaurante, String entregador) {
+    public Entrega(String codigo, String data, String hora, String status, String restaurante, String entregador, Pedido pedido) {
         this.codigo = codigo;
         this.data = data;
         this.hora = hora;
         this.status = status;
         this.restaurante = restaurante;
         this.entregador = entregador;
+        this.pedido = pedido;
     }
     
     public String getId() {
@@ -91,5 +97,13 @@ public class Entrega {
 
     public void setEntregador(String entregador) {
         this.entregador = entregador;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+    
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 }

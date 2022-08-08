@@ -7,5 +7,6 @@ import com.delivery_restaurant.delivery_restaurant.models.Entrega;
 
 @Repository
 public interface EntregaRepository extends MongoRepository<Entrega,String>{
+
     
 }

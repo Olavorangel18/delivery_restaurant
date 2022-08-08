@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.delivery_restaurant.delivery_restaurant.models.Entrega;
 import com.delivery_restaurant.delivery_restaurant.services.EntregaService;
+import com.delivery_restaurant.delivery_restaurant.services.PedidoService;
 
 @RestController
 @RequestMapping("/entrega")
@@ -22,6 +23,8 @@ public class EntregaController {
 
     @Autowired
     private EntregaService entregaService;
+    @Autowired 
+    private PedidoService pedidoService;
         
         @GetMapping()
         public List<Entrega> getAllEntrega() {
@@ -37,6 +40,11 @@ public class EntregaController {
         public Entrega saveEntrega(@RequestBody Entrega entrega) {
             UUID uuid = UUID.randomUUID();
             entrega.setId(uuid.toString());
+            if(this.pedidoService.getById(entrega.getPedido().getId()) == null) {
+                entrega = null;
+            }
+   
+            
             return this.entregaService.save(entrega);
         }
         
@@ -54,6 +62,7 @@ public class EntregaController {
         public void updateEntrega(@RequestBody Entrega entrega) {
             this.entregaService.update(entrega);
         }
+
         
     
 }
