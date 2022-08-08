@@ -3,6 +3,7 @@ package com.delivery_restaurant.delivery_restaurant.models;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -15,8 +16,9 @@ public class Pedido {
     @NotNull(message = "Codigo is compulsory")
     private String codigo;
     @Field
+    @DBRef
     @NotNull(message = "User is compulsory")
-    private User user; // Precisa colocar flag para o MongoDB entender a cardinalidade
+    private User user;
     @Field
     @NotNull(message = "restaurante is compulsory")
     private String restaurante;

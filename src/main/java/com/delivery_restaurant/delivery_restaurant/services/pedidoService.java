@@ -28,6 +28,8 @@ public class PedidoService implements GeneralService<Pedido> {
         
         @Override
         public Pedido save(Pedido t) {
+            User user = this.pedidoRepository.findUserByUserEmail(t.getUser().getEmail());
+            t.setUser(user);
             return pedidoRepository.save(t);
         }
         

@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.delivery_restaurant.delivery_restaurant.models.User;
 
 @Repository
-public interface UserRepository extends MongoRepository<User,String> {
-    
+public interface UserRepository extends MongoRepository<User,String> {    
+        User findByEmail(String email);
 }
