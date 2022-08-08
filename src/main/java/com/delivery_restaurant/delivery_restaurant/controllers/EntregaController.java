@@ -17,7 +17,10 @@ import com.delivery_restaurant.delivery_restaurant.models.Entrega;
 import com.delivery_restaurant.delivery_restaurant.services.EntregaService;
 import com.delivery_restaurant.delivery_restaurant.services.PedidoService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 @RestController
+@SecurityRequirement(name = "restaurantapi")
 @RequestMapping("/entrega")
 public class EntregaController {
 

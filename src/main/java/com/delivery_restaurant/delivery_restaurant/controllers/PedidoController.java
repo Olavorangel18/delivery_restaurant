@@ -19,7 +19,10 @@ import com.delivery_restaurant.delivery_restaurant.models.User;
 import com.delivery_restaurant.delivery_restaurant.services.PedidoService;
 import com.delivery_restaurant.delivery_restaurant.services.UserService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 @RestController
+@SecurityRequirement(name = "restaurantapi")
 @RequestMapping("/pedido")
 public class PedidoController {
     @Autowired

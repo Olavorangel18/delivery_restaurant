@@ -41,11 +41,6 @@ class HelloWorldController {
 	@Autowired
 	private MyUserDetailsService userDetailsService;
 
-	@RequestMapping({ "/hello" })
-	public String firstPage() {
-		return "Hello World";
-	}
-
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 
@@ -96,7 +91,7 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf().disable()
-				.authorizeRequests().antMatchers("/authenticate").permitAll().
+				.authorizeRequests().antMatchers("/authenticate","/swagger-ui/**", "/restaurantDelivery-openapi/**").permitAll().
 						anyRequest().authenticated().and().
 						exceptionHandling().and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
