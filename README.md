@@ -6,3 +6,38 @@
 ### 2) Depois seguir com o comando "mvn spring-boot:run"
 
 #### OBS: A aplicação utiliza java 8 e o spring boot 2.1.9
+
+## Endpoints 
+
+### URL BASE = localhost:8093
+
+### UserController 
+
+#### getAll - /user
+#### getByID - /user/{id}
+#### put - /user/update
+#### delete - /user/delete
+#### deleteByID - /user/{id}
+
+### PedidoController 
+
+#### getAll - /pedido
+#### getByID - /pedido/{id}
+#### put - /pedido/update
+#### delete - /pedido/delete
+#### deleteByID - /pedido/{id}
+
+### EntregaController 
+
+#### getAll - /entrega
+#### getByID - /entrega/{id}
+#### put - /entrega/update
+#### delete - /entrega/delete
+#### deleteByID - /entrega/{id}
+
+### AuthenticationController 
+
+#### Authentication - /authenticate
+
+
+
