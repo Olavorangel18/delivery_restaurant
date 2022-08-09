@@ -7,8 +7,8 @@
 
 #### OBS: A aplicação utiliza java 8 e o spring boot 2.1.9
 
-##Video de Explicação (OPCIONAL)
-[![Video explicativo](https://img.youtube.com/vi/JF_08IcAVBA/0.jpg)](https://www.youtube.com/watch?v=JF_08IcAVBA)
+## Video de Explicação (OPCIONAL)
+[![Video de explicação](https://img.youtube.com/vi/JF_08IcAVBA/0.jpg)](https://www.youtube.com/watch?v=JF_08IcAVBA)
 ## Endpoints 
 
 ### URL BASE = localhost:8093
