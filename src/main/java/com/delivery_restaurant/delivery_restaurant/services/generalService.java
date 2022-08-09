@@ -1,7 +1,6 @@
 package com.delivery_restaurant.delivery_restaurant.services;
 import java.util.List;
 
-
 public interface GeneralService<T> {
     public List<T> getAll();
     public T getById(String id);

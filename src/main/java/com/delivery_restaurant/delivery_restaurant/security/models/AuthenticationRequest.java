@@ -1,9 +1,6 @@
 package com.delivery_restaurant.delivery_restaurant.security.models;
-
 import java.io.Serializable;
-
 public class AuthenticationRequest implements Serializable {
-
 
     private String username;
     private String password;

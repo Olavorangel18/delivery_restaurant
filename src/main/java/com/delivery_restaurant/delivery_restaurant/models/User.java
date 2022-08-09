@@ -1,12 +1,6 @@
 package com.delivery_restaurant.delivery_restaurant.models;
-
-
-
 import java.util.List;
-
-
 import javax.validation.constraints.NotNull;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -87,7 +81,5 @@ public class User {
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
-
-    
     
 }

@@ -1,7 +1,6 @@
 package com.delivery_restaurant.delivery_restaurant.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -15,7 +14,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +24,6 @@ import com.delivery_restaurant.delivery_restaurant.security.filters.JwtRequestFi
 import com.delivery_restaurant.delivery_restaurant.security.models.AuthenticationRequest;
 import com.delivery_restaurant.delivery_restaurant.security.models.AuthenticationResponse;
 import com.delivery_restaurant.delivery_restaurant.security.util.JwtUtil;
-
 import java.lang.Exception;
 
 @RestController

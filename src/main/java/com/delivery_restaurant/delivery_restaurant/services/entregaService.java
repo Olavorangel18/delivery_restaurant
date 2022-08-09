@@ -40,6 +40,5 @@ public class EntregaService implements GeneralService<Entrega> {
         public void update(Entrega entrega) {
             this.entregaRepository.save(entrega);
         }
-        
-    
+         
 }

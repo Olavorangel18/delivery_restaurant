@@ -1,7 +1,5 @@
 package com.delivery_restaurant.delivery_restaurant.models;
-
 import javax.validation.constraints.NotNull;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -71,7 +69,5 @@ public class Pedido {
     public void setComida(String comida) {
         this.comida = comida;
     }
-
-    
-    
+ 
 }

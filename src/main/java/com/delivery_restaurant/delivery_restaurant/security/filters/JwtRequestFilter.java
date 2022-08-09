@@ -1,6 +1,4 @@
 package com.delivery_restaurant.delivery_restaurant.security.filters;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -8,10 +6,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import com.delivery_restaurant.delivery_restaurant.security.MyUserDetailsService;
 import com.delivery_restaurant.delivery_restaurant.security.util.JwtUtil;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
