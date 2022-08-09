@@ -38,13 +38,6 @@ public class EntregaController {
         
         @PostMapping("/save")
         public Entrega saveEntrega(@RequestBody Entrega entrega) {
-            UUID uuid = UUID.randomUUID();
-            entrega.setId(uuid.toString());
-            if(this.pedidoService.getById(entrega.getPedido().getId()) == null) {
-                entrega = null;
-            }
-   
-            
             return this.entregaService.save(entrega);
         }
         

@@ -1,5 +1,7 @@
 package com.delivery_restaurant.delivery_restaurant.services;
 import java.util.List;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.delivery_restaurant.delivery_restaurant.models.User;
@@ -22,6 +24,8 @@ public class UserService implements GeneralService<User> {
     
     @Override
     public User save(User user) {
+        UUID uuid = UUID.randomUUID();
+        user.setId(uuid.toString());
         return this.userRepository.save(user);
     }
     

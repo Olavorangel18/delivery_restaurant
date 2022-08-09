@@ -24,8 +24,8 @@ public class PedidoService implements GeneralService<Pedido> {
         }
         
         @Override
-        public Pedido save(Pedido t) {
-            return pedidoRepository.save(t);
+        public Pedido save(Pedido pedido) {
+            return pedidoRepository.save(pedido);
         }
         
         @Override

@@ -34,8 +34,6 @@ public class UserController {
 
     @PostMapping(value="/save")
     public User saveUser(@RequestBody User user) {
-        UUID uuid = UUID.randomUUID();
-        user.setId(uuid.toString());
         return this.userService.save(user);
     }
 

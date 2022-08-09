@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.delivery_restaurant.delivery_restaurant.models.Pedido;
 import com.delivery_restaurant.delivery_restaurant.models.User;
 import com.delivery_restaurant.delivery_restaurant.services.PedidoService;
+import com.delivery_restaurant.delivery_restaurant.services.PedidoUserService;
 import com.delivery_restaurant.delivery_restaurant.services.UserService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
@@ -24,7 +25,7 @@ public class PedidoController {
     @Autowired
     private PedidoService pedidoService;
     @Autowired
-    private UserService userService;
+    private PedidoUserService pedidoUserService;
 
     @GetMapping()
     public List<Pedido> getAllPedido() {
@@ -38,19 +39,7 @@ public class PedidoController {
 
     @PostMapping("/save")
     public Pedido savePedido(@RequestBody Pedido pedido) {
-        UUID uuid = UUID.randomUUID();
-        pedido.setId(uuid.toString());
-        
-        User user = this.userService.findByEmail(pedido.getEmail());
-        pedido.setEmail(user.getEmail());
-        this.userService.update(user);
-        if(user.getPedidos() == null) {
-            user.setPedidos(new ArrayList<Pedido>());
-        }
-        user.getPedidos().add(pedido);
-        this.userService.update(user);
-
-        return this.pedidoService.save(pedido);
+        return this.pedidoUserService.save(pedido);
     }
 
     @DeleteMapping("/delete")
