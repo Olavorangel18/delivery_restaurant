@@ -7,11 +7,13 @@
 
 #### OBS: A aplicação utiliza java 8 e o spring boot 2.1.9
 
+## Video de Explicação (OPCIONAL)
+[![Video de explicação](https://img.youtube.com/vi/JF_08IcAVBA/0.jpg)](https://www.youtube.com/watch?v=JF_08IcAVBA)
 ## Endpoints 
 
 ### URL BASE = localhost:8093
 
-### UserController 
+## UserController 
 
 #### getAll - /user
 #### getByID - /user/{id}
@@ -19,7 +21,7 @@
 #### delete - /user/delete
 #### deleteByID - /user/{id}
 
-### PedidoController 
+## PedidoController 
 
 #### getAll - /pedido
 #### getByID - /pedido/{id}
@@ -27,7 +29,7 @@
 #### delete - /pedido/delete
 #### deleteByID - /pedido/{id}
 
-### EntregaController 
+## EntregaController 
 
 #### getAll - /entrega
 #### getByID - /entrega/{id}
@@ -35,7 +37,7 @@
 #### delete - /entrega/delete
 #### deleteByID - /entrega/{id}
 
-### AuthenticationController 
+## AuthenticationController 
 
 #### Authentication - /authenticate
 
